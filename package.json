@@ -1,0 +1,44 @@
+{
+  "name": "catchthemine",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "biome check src",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@farcaster/miniapp-sdk": "^0.1.2",
+    "@farcaster/miniapp-wagmi-connector": "^1.0.0",
+    "@neynar/react": "^1.2.5",
+    "@pigment-css/react": "^0.0.30",
+    "@tailwindcss/vite": "^4.1.10",
+    "@tanstack/react-query": "5.45.1",
+    "@vercel/node": "^5.3.4",
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sqlite3": "^5.1.7",
+    "tailwindcss": "^4.1.10",
+    "viem": "latest",
+    "wagmi": "latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@wagmi/cli": "latest",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
