@@ -102,7 +102,7 @@ function App() {
 
   const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
   const [isWinnersOpen, setIsWinnersOpen] = useState(false);
-  const [isClaimOpen, setIsClaimOpen] = useState(false); // State untuk modal claim
+  const [isClaimOpen, setIsClaimOpen] = useState(false); 
   const [isPlaying, setIsPlaying] = useState(false);
   const [countdown, setCountdown] = useState("");
   const [notification, setNotification] = useState<NotificationState | null>(
