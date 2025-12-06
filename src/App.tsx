@@ -10,11 +10,8 @@ import { sdk } from "@farcaster/miniapp-sdk";
 // Import local components, hooks, and assets
 import { Connect } from "./components/Connect";
 import { Game } from "./components/Game";
-import { Leaderboard } from "./components/Leaderboard";
-import { Winners } from "./components/Winners";
 import { Claim } from "./components/Claim";
 import { Notification } from "./components/Notification";
-import { LeaderboardIcon } from "./components/Icons";
 import { useLivesLocalStorage } from "./hooks/useLivesLocalStorage";
 import Hub from "./ABI/Hub.json";
 import assetsImg from "./assets/blue.png";
@@ -68,24 +65,9 @@ const ClockIcon = () => (
     />
   </svg>
 );
-const WinnersIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="text-yellow-400"
-  >
-    <path d="M12 2L9 6H15L12 2Z" fill="currentColor" />
-    <path
-      d="M18 6H6C4.89543 6 4 6.89543 4 8V14C4 15.1046 4.89543 16 6 16H7V18C7 19.6569 8.34315 21 10 21H14C15.6569 21 17 19.6569 17 18V16H18C19.1046 16 20 15.1046 20 14V8C20 6.89543 19.1046 6 18 6Z"
-      fill="currentColor"
-    />
-  </svg>
-);
 
-const GAME_HUB_ADDRESS = "0x1A01f8ff3e3E15a3260C74f068E909064dF31E91";
+
+const GAME_HUB_ADDRESS = "0x24f544cf8ef819cdb1063c2ca9dc5464afadec05";
 
 type NotificationState = {
   message: string;
@@ -100,8 +82,8 @@ function App() {
     `lives_game_${guestOrAddress}`
   );
 
-  const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
-  const [isWinnersOpen, setIsWinnersOpen] = useState(false);
+ 
+
   const [isClaimOpen, setIsClaimOpen] = useState(false); 
   const [isPlaying, setIsPlaying] = useState(false);
   const [countdown, setCountdown] = useState("");
@@ -337,31 +319,9 @@ function App() {
               <ClaimIcon />
               <span>Claim</span>
             </button>
-            <button
-              onClick={() => setIsLeaderboardOpen(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl shadow-lg"
-            >
-              <LeaderboardIcon />
-              <span>Leaderboard</span>
-            </button>
-            <button
-              onClick={() => setIsWinnersOpen(true)}
-              className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl shadow-lg"
-            >
-              <WinnersIcon />
-              <span>Winners</span>
-            </button>
           </div>
         )}
       </div>
-      <Leaderboard
-        isOpen={isLeaderboardOpen}
-        onClose={() => setIsLeaderboardOpen(false)}
-      />
-      <Winners
-        isOpen={isWinnersOpen}
-        onClose={() => setIsWinnersOpen(false)}
-      />
       <Claim isOpen={isClaimOpen} onClose={() => setIsClaimOpen(false)} />
     </main>
   );
