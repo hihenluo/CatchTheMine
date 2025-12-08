@@ -8,7 +8,7 @@ import blueImg from '../assets/blue.png';
 import emeraldImg from '../assets/emerald.png';
 import goldImg from '../assets/gold.png';
 import silverImg from '../assets/silver.png';
-import bombImg from '../assets/dynamite.png';
+import bombImg from '../assets/bomb.png';
 
 const minesChoices = [
   { name: 'Blue', src: blueImg },
