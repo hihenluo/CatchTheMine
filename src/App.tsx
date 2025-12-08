@@ -239,7 +239,7 @@ function App() {
                         className="h-8 w-8"
                       />
                       <span className="font-bold text-yellow-400 text-lg">
-                        +7 Gold
+                        +7 Points
                       </span>
                     </div>
                   </div>
@@ -248,7 +248,7 @@ function App() {
                     <div className="flex items-center gap-2">
                       <img src={bombImg} alt="Bomb" className="h-8 w-8" />
                       <span className="font-bold text-red-500 text-lg">
-                        -4 Life
+                        -4 Points
                       </span>
                     </div>
                   </div>
