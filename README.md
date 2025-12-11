@@ -2,7 +2,7 @@
 
 A fast-paced **Farcaster Mini App Game** where players tap falling gems to earn points — but beware of the dynamite! 💣 One wrong tap and your score drops instantly.
 
-This project is built with modern Web3 and frontend technologies including **React**, **Vite**, **Wagmi**, **Viem**, **Tailwind v4**, and **Farcaster Mini App SDK**.
+This project is built with modern Web3 and frontend technologies including **React**, **Vite**, **Wagmi**, **Viem**, **Tailwind v4**, and **Farcaster Mini App SDK** **Celo Chain**.
 
 ---
 
