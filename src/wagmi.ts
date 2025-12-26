@@ -1,25 +1,29 @@
 // wagmi.ts
-import { farcasterFrame } from "@farcaster/miniapp-wagmi-connector";
-import { http, createConfig } from "wagmi";
-import { base, mainnet } from "wagmi/chains";
-import { injected, metaMask, walletConnect } from "wagmi/connectors";
 
-export const config = createConfig({
-  chains: [base, mainnet],
-  connectors: [
-    farcasterFrame(),
-    metaMask(), 
-    injected({ shimDisconnect: true }), 
-    walletConnect({ projectId: "3019281f-07ce-499c-a914-0a34503fcfe1" }), 
-  ],
-  transports: {
-    [base.id]: http(),
-    [mainnet.id]: http(),
-  },
+import { createAppKit } from "@reown/appkit/react";
+import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
+import { base } from "@reown/appkit/networks";
+
+const projectId = "cd169b99d42633d1d81f5aee613d0eed";
+
+export const wagmiAdapter = new WagmiAdapter({
+  projectId,
+  networks: [base],
+  ssr: true,
+  connectors: [],
 });
 
-declare module "wagmi" {
-  interface Register {
-    config: typeof config;
-  }
-}
+createAppKit({
+  adapters: [wagmiAdapter],
+  networks: [base],
+  projectId,
+  metadata: {
+    name: "Catch The Mine",
+    description: "Catch The Mine",
+    url: "https://catchthemine.xyz/",
+    icons: ["https://catchthemine.xyz/logo.png"],
+  },
+  themeMode: "dark",
+});
+
+export const config = wagmiAdapter.wagmiConfig;
